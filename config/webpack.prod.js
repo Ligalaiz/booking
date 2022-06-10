@@ -58,7 +58,7 @@ module.exports = merge(common, {
       failOnError: true,
     }),
     new HtmlWebpackPlugin({
-      template: join(root, 'public/index.ejs'),
+      template: join(root, 'src/index.pug'),
       templateParameters: {
         title: 'Project Management App',
         buildTime: '',
