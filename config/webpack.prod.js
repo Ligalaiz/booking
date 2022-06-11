@@ -26,7 +26,7 @@ module.exports = merge(common, {
     rules: [
       {
         test: /\.(sa|sc|c)ss$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'],
+        use: ['css-loader', 'postcss-loader', 'sass-loader'],
       },
     ],
   },
@@ -58,7 +58,7 @@ module.exports = merge(common, {
       failOnError: true,
     }),
     new HtmlWebpackPlugin({
-      template: join(root, 'src/index.pug'),
+      template: join(root, 'src/index.ejs'),
       templateParameters: {
         title: 'Project Management App',
         buildTime: '',
