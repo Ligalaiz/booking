@@ -1,0 +1,27 @@
+.main {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+
+  &__left {
+    flex: 0 0 auto;
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .main {
+    flex-wrap: wrap;
+
+    &__left {
+      flex: unset;
+      width: 100%;
+    }
+  }
+}

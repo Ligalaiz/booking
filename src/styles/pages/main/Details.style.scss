@@ -1,0 +1,38 @@
+@import '../../../styles/variables.scss';
+
+.details {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 5.2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+  &__item {
+    min-width: 10.6rem;
+  }
+
+  &__title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.8rem;
+    letter-spacing: -0.05rem;
+    color: $gray-color;
+    text-transform: uppercase;
+  }
+
+  &__place {
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 2.1rem;
+  }
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
