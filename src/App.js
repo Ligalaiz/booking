@@ -58,7 +58,12 @@ window.addEventListener('load', async () => {
   };
 
   const getData = async () => {
-    const result = await loadSearchRequest('http://localhost:3001/tickets');
+    document.getElementById('tickets').innerHTML = '';
+    document.getElementById('loader').classList.add('active');
+
+    const result = await loadSearchRequest('http://localhost:3001/tickets', 5);
+
+    document.getElementById('loader').classList.remove('active');
 
     const normalized = await normalize(result);
 
