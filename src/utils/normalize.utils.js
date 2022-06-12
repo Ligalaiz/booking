@@ -2,12 +2,12 @@ const normalize = (flights) => {
   return flights.map((flight) => {
     const segments = flight.segments.map((segment) => {
       const dateArrive = new Date(segment.date);
-      const hoursArrive = dateArrive.getHours();
-      const minuteArrive = dateArrive.getMinutes();
+      const hoursArrive = dateArrive.getUTCHours();
+      const minuteArrive = dateArrive.getUTCMinutes();
 
       const dateDep = new Date(+dateArrive + segment.duration * 60 * 1000);
-      const hoursDep = dateDep.getHours();
-      const minuteDep = dateDep.getMinutes();
+      const hoursDep = dateDep.getUTCHours();
+      const minuteDep = dateDep.getUTCMinutes();
 
       const addZero = (val) => (val < 10 ? `0${val}` : val);
 
