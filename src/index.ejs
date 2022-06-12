@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <%= version %> <%= buildTime %> <%= commitHash %>
+    <div class="container" id="page">
+      <header class="header">
+        <div class="header__img"><img src=<%= require("./assets/img/logo.png")%> alt="booking" /></div>
+      </header>
+      <main class="main">
+        <div class="main__left">
+          <div class="filter">
+            <p class="filter__title">Количество пересадок</p>
+            <ul class="filter__list reset-list">
+              <li class="filter__item">
+                <div class="checkbox__wrap">
+                  <label class="checkbox__label">
+                    <input type="checkbox" class="checkbox__field" data-filter="all" />
+                    <i class="accept"></i>
+                    <span class="checkbox__content">Все</span>
+                  </label>
+                </div>
+              </li>
+              <li class="filter__item">
+                <div class="checkbox__wrap">
+                  <label class="checkbox__label">
+                    <input type="checkbox" class="checkbox__field" data-filter="no" />
+                    <i class="accept"></i>
+                    <span class="checkbox__content">Без пересадок</span>
+                  </label>
+                </div>
+              </li>
+              <li class="filter__item">
+                <div class="checkbox__wrap">
+                  <label class="checkbox__label">
+                    <input type="checkbox" class="checkbox__field" data-filter="one" />
+                    <i class="accept"></i>
+                    <span class="checkbox__content">1 пересадка</span>
+                  </label>
+                </div>
+              </li>
+              <li class="filter__item">
+                <div class="checkbox__wrap">
+                  <label class="checkbox__label">
+                    <input type="checkbox" class="checkbox__field" data-filter="two" />
+                    <i class="accept"></i>
+                    <span class="checkbox__content">2 пересадки</span>
+                  </label>
+                </div>
+              </li>
+              <li class="filter__item">
+                <div class="checkbox__wrap">
+                  <label class="checkbox__label">
+                    <input type="checkbox" class="checkbox__field" data-filter="three" />
+                    <i class="accept"></i>
+                    <span class="checkbox__content">3 пересадки</span>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="main__right">
+          <div class="sortBar">
+            <button type="button" class="btn btn__cheap active" data-sort="cheap">Самый дешевый</button>
+            <button type="button" class="btn btn__fast" data-sort="fast">Самый быстрый</button>
+          </div>
+          <div class="loader" id="loader"></div>
+          <div class="flight__wrap" id="tickets"></div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

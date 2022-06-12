@@ -1,0 +1,44 @@
+@import '../../../styles/variables.scss';
+
+.flight {
+  display: flex;
+  flex-direction: column;
+  max-width: 50.2rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  gap: 1rem;
+
+  background-color: $white-color;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+
+  &__price {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    font-weight: 600;
+    color: $brand-color;
+  }
+
+  &__company {
+    width: 11rem;
+    height: 3.6rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .flight {
+    max-width: none;
+  }
+}
