@@ -1,5 +1,5 @@
-import { loadSearchRequest } from './getFlights.module';
 import { requestApiMock } from '@src/internals/mocks';
+import { loadSearchRequest } from './getFlights.module';
 
 describe('Request works', () => {
   const originalFetch = window.fetch;

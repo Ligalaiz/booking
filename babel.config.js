@@ -4,9 +4,7 @@ module.exports = {
     setSpreadProperties: true,
     setComputedProperties: true,
   },
-  presets: [
-    '@babel/env',
-  ],
+  presets: ['@babel/env'],
   plugins: [
     '@babel/transform-runtime',
     '@babel/syntax-dynamic-import',

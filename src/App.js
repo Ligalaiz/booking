@@ -9,7 +9,7 @@ window.addEventListener('load', async () => {
   const allCheckbox = document.querySelector('input[data-filter="all"]');
 
   let sort = 'cheap';
-  let filter = new Set();
+  const filter = new Set();
 
   const handleClick = (e) => {
     const { dataset } = e.target;
@@ -30,7 +30,9 @@ window.addEventListener('load', async () => {
       const { checked } = e.target;
 
       if (dataset.filter === 'all' && checked) {
-        [...document.querySelectorAll('input[data-filter]')].slice(1).forEach((item) => (item.checked = false));
+        [...document.querySelectorAll('input[data-filter]')].slice(1).forEach((item) => {
+          item.checked = false;
+        });
         filter.clear();
       }
 
@@ -75,7 +77,7 @@ window.addEventListener('load', async () => {
       })
       .slice(0, 5);
 
-    const sorted = [...filtred].sort((a, b) => parseInt(a[sort]) - parseInt(b[sort]));
+    const sorted = [...filtred].sort((a, b) => parseInt(a[sort], 10) - parseInt(b[sort], 10));
     const html = await renderTicketsUtils(sorted);
     if (tickets) tickets.innerHTML = html;
   };

@@ -8,13 +8,13 @@ const loadSearchRequest = async (url, n) => {
       throw new Error('tickets request failed');
     }
 
-    let result = await delay(() => response.json(), 0);
+    const result = await delay(() => response.json(), 0);
 
     return result;
   } catch (err) {
     if (n <= 1) return err.message;
     await delay(() => {}, 1000);
-    return await loadSearchRequest(url, n - 1);
+    return loadSearchRequest(url, n - 1);
   }
 };
 

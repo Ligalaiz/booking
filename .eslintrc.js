@@ -16,7 +16,7 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   parserOptions: {
-    ecmaVersion: 2021,
+    ecmaVersion: 'latest',
     sourceType: 'module',
   },
   plugins: ['import', 'jest'],
@@ -58,6 +58,10 @@ module.exports = {
       node: {
         extensions: ['.js'],
       },
+      alias: [
+        ['@src', './src'],
+        ['@utils', './src/utils'],
+      ],
     },
     propWrapperFunctions: [
       // The names of any function used to wrap propTypes, e.g.
