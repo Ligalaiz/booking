@@ -1,0 +1,40 @@
+@import '../../../styles/variables.scss';
+
+.filter {
+  min-width: 232px;
+  padding: 20px;
+  border-radius: 0.5rem;
+
+  background-color: $white-color;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__title {
+    margin-bottom: 2rem;
+
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.2rem;
+    letter-spacing: -0.8px;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 992px) {
+  .filter {
+    &__list {
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    &__title {
+      text-align: center;
+    }
+  }
+}

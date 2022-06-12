@@ -12,9 +12,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.pug$/,
-        loader: 'pug-loader',
-        exclude: /(node_modules|bower_components)/,
+        test: /\.ejs$/,
+        loader: 'compile-ejs-loader',
+        options: {
+          htmlmin: true,
+          htmlminOptions: {
+            removeComments: true,
+          },
+        },
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/i,

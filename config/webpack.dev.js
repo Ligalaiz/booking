@@ -32,6 +32,7 @@ module.exports = merge(common, {
       },
     ],
   },
+
   devServer: {
     hot: true,
     open: '/',
@@ -43,7 +44,7 @@ module.exports = merge(common, {
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: join(src, 'index.pug'),
+      template: join(src, 'index.ejs'),
       templateParameters: {
         title: 'booking',
         buildTime: `Build at: ${new Date().toISOString()}`,
