@@ -1,19 +1,20 @@
 import { delay } from '@src/utils';
 
-const loadSearchRequest = async (url) => {
-  document.getElementById('tickets').innerHTML = '';
-  document.getElementById('loader').classList.add('active');
-
+const loadSearchRequest = async (url, n) => {
   try {
     const response = await fetch(url);
 
-    let result = await delay(response.json(), 0);
+    if (response.status !== 200) {
+      throw new Error('tickets request failed');
+    }
 
-    document.getElementById('loader').classList.remove('active');
+    let result = await delay(() => response.json(), 0);
+
     return result;
   } catch (err) {
-    console.log({ err });
-    document.getElementById('loader').classList.remove('active');
+    if (n <= 1) return err.message;
+    await delay(() => {}, 1000);
+    return await loadSearchRequest(url, n - 1);
   }
 };
 

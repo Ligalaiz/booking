@@ -1,6 +1,6 @@
-async function delay(response, ms) {
+const delay = (response, ms) => {
   return new Promise((res) => {
-    setTimeout(() => res(response), ms);
+    setTimeout(() => res(response()), ms);
   });
 }
 
